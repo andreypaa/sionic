@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ItemsListController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Листинг</h1>
+        <table class="table table-striped">
+            <tbody class="">
+            {% for item in items %}
+                <tr>
+                    <th scope="row">{{ item.id|e }}</th>
+                    <td>{{ item.name|e }}</td>
+                    <td>{{ item.code|e }}</td>
+                    <td>{{ item.usagetxt|e }}</td>
+                </tr>
+            {% endfor %}{#  #}
+            </tbody>
+
+        </table>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="{{ url('app_items_list', schemeRelative = true) }}">Начало</a></li>
+                {% if id %}
+                    <li class="page-item"><a class="page-link" href="#" onclick="window.history.back(); return false;">Предыдущая</a></li>
+                {%  endif %}
+                <li class="page-item"><a class="page-link" href="{{ url('app_items_list', {'id':last_id}, schemeRelative = true) }}">Следующая</a></li>
+            </ul>
+        </nav>
+    </div>
+
+{% endblock %}
