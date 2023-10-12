@@ -34,3 +34,16 @@
 
 - при возникновении ошибок или не доработок - сообщите, поправлю или поробую объяснить
 - если надо больше комментариев по работе скрипта, то допишу
+
+### Основная функциональность
+
+Код отвечающий за разбор xml файлов:
+
+- `src/Service/Parsers/ParserTypeImport.php`
+- `src/Service/Parsers/ParserTypeOffers.php`
+- `src/Service/Parsers/Abstract1CParser.php`
+
+Листинг
+
+- src/Controller/ItemsListController.php
+- src/Repository/ItemsRepository.php
